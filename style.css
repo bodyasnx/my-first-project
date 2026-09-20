@@ -616,3 +616,17 @@ img {
     gap: 4rem;
   }
 }
+:root[data-theme="dark"] {
+  --primary-color: #29a8ff;
+  --primary-hover: #66bfff;
+  --on-primary: #04121d;
+  --text-color: #eef1f5;
+  --muted-color: #a9b2bf;
+  --bg-color: #121418;
+  --surface-color: #23272e;
+  --border-color: #363b44;
+  --input-border-color: #737d8c;
+  --footer-bg: #0b0c0f;
+  --footer-text: #a9b2bf;
+  --shadow-color: rgba(0, 0, 0, 0.45);
+}
