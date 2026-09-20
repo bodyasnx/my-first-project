@@ -1,3 +1,8 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 :root {
   --primary-color: #0a66c2;
@@ -395,4 +400,18 @@ textarea:hover {
 .section-head h2,
 .section-head p {
   position: relative;
+}
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding-block: 1rem;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.25rem;
 }
