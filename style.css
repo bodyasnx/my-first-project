@@ -227,3 +227,149 @@ a:hover {
   font-size: 0.95rem;
   color: var(--muted-color);
 }
+
+.table-wrap {
+  overflow-x: auto;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.specs-table th,
+.specs-table td {
+  padding: 0.85rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.specs-table tr:last-child th,
+.specs-table tr:last-child td {
+  border-bottom: none;
+}
+
+.specs-table th {
+  width: 42%;
+  font-weight: 600;
+  color: var(--muted-color);
+}
+
+.specs-note {
+  padding: 1.5rem;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary-color);
+  border-radius: var(--radius);
+}
+
+.specs-note p {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--muted-color);
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+
+.gallery figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted-color);
+}
+
+.contact-list {
+  margin-top: 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-list li + li {
+  margin-top: 0.5rem;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font: inherit;
+  color: var(--text-color);
+  background-color: var(--surface-color);
+  border: 1px solid var(--input-border-color);
+  border-radius: 0.5rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+::placeholder {
+  color: var(--muted-color);
+  opacity: 1;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--primary-color);
+}
+
+.form-check input {
+  margin-top: 0.3rem;
+  accent-color: var(--primary-color);
+}
+.site-footer {
+  margin-top: 3rem;
+  padding-block: 2.5rem 1.5rem;
+  font-size: 0.9rem;
+  color: var(--footer-text);
+  background-color: var(--footer-bg);
+}
+
+.footer-title {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.site-footer ul {
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer li + li {
+  margin-top: 0.4rem;
+}
+
+.site-footer a {
+  color: var(--footer-text);
+}
+
+.site-footer a:hover {
+  color: #ffffff;
+}
+
+.copyright {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
