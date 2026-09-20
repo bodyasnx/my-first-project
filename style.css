@@ -548,3 +548,71 @@ textarea:hover {
   grid-area: note;
   align-self: start;
 }
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hero {
+    padding-block: 4rem 5rem;
+  }
+
+  .hero-grid {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .card {
+    flex-basis: calc(50% - 0.625rem);
+  }
+
+  .specs-layout {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "table note";
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .contacts-layout {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .form-row {
+    flex-direction: row;
+  }
+
+  .footer-cols {
+    flex-direction: row;
+    gap: 4rem;
+  }
+}
