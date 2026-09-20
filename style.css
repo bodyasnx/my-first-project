@@ -630,3 +630,8 @@ img {
   --footer-text: #a9b2bf;
   --shadow-color: rgba(0, 0, 0, 0.45);
 }
+.gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
