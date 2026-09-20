@@ -532,3 +532,19 @@ textarea:hover {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
+.specs-layout {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas:
+    "table"
+    "note";
+}
+
+.table-wrap {
+  grid-area: table;
+}
+
+.specs-note {
+  grid-area: note;
+  align-self: start;
+}
