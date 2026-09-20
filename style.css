@@ -373,3 +373,26 @@ textarea:hover {
   font-size: 0.8rem;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
+.section-head {
+  position: relative;
+}
+
+.watermark {
+  position: absolute;
+  inset-inline: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(3rem, 15vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--primary-color);
+  opacity: 0.16;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.section-head h2,
+.section-head p {
+  position: relative;
+}
