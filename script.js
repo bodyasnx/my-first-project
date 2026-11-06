@@ -78,6 +78,17 @@ document.addEventListener('keydown', (e) => {
 
 // ===== Практична 15: обробка подій і валідація форми =====
 const contactForm = document.querySelector('.contact-form');
+const formMessage = document.querySelector('#form-message');
+
+function showMessage(text, type) {
+  formMessage.textContent = text;
+  formMessage.className = 'form-message is-' + type;
+}
+
+function clearMessage() {
+  formMessage.textContent = '';
+  formMessage.className = 'form-message';
+}
 
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault(); // сторінка не перезавантажується
@@ -90,7 +101,7 @@ contactForm.addEventListener('submit', (event) => {
   console.log('Email:', email);
   console.log('Повідомлення:', message);
   console.log('Згода:', consent);
-  
+
   let error = '';
   if (name === '') {
     error = "Введіть ім'я.";
@@ -103,8 +114,10 @@ contactForm.addEventListener('submit', (event) => {
   }
 
   if (error !== '') {
-    console.log('Помилка:', error);
+    showMessage(error, 'error');
     return;
   }
-  console.log('Форма заповнена коректно');
+
+  showMessage('Дякуємо, ' + name + '! Повідомлення прийнято (навчальна форма нікуди не надсилає дані).', 'success');
+  contactForm.reset();
 });
