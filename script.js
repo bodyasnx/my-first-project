@@ -1,3 +1,14 @@
+// ===== Практична 14: базові скрипти та робота з DOM =====
+
+// Крок 2: змінні з даними проєкту (const для незмінного, let для змінного)
+const projectName = 'VXE R1 Pro Max';
+const sectionNames = ['Головна', 'Переваги', 'Характеристики', 'Галерея', 'Контакти'];
+let sectionsCount = sectionNames.length;
+
+// Крок 3: перевіряємо значення у DevTools -> Console
+console.log('Проєкт:', projectName);
+console.log('Розділи сайту:', sectionNames);
+console.log('Кількість розділів:', sectionsCount);
 
 const root = document.documentElement;
 const toggle = document.getElementById('theme-toggle');
