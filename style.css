@@ -422,15 +422,68 @@ textarea:hover {
 .header-inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
   padding-block: 1rem;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Бургер-кнопка: три лінії, кнопка без стандартних стилів браузера */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.75rem;
+  height: 1.25rem;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  height: 2px;
+  background-color: var(--text-color);
+  border-radius: 1px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+/* Коли меню відкрите, три лінії перетворюються на хрестик */
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+  transform: translateY(0.55rem) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-0.55rem) rotate(-45deg);
+}
+
+/* Панель з навігацією та перемикачем теми: на мобільному це випадний список */
+.nav-panel {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.nav-panel.is-open {
+  display: flex;
 }
 
 .nav-list {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 0.25rem 1.25rem;
 }
 .hero-grid {
@@ -591,7 +644,29 @@ img {
 
   .header-inner {
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+  }
+
+  .header-row {
+    width: auto;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-panel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.75rem;
+    padding-top: 0;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 0.25rem 1.25rem;
   }
 
   .hero {
