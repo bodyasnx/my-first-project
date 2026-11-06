@@ -22,6 +22,10 @@ console.log('Футер знайдено:', pageFooter !== null);
 const yearElement = document.querySelector('#current-year');
 yearElement.textContent = new Date().getFullYear();
 
+// Крок 6: querySelectorAll повертає всі картки переваг
+const cards = document.querySelectorAll('.card');
+console.log('Кількість карток переваг:', cards.length);
+
 const root = document.documentElement;
 const toggle = document.getElementById('theme-toggle');
 
