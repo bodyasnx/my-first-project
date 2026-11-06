@@ -26,6 +26,17 @@ yearElement.textContent = new Date().getFullYear();
 const cards = document.querySelectorAll('.card');
 console.log('Кількість карток переваг:', cards.length);
 
+// Крок 7: classList.add підсвічує активний пункт меню
+const navLinks = document.querySelectorAll('.nav-list a');
+navLinks[0].classList.add('active'); // на старті активна «Головна»
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    navLinks.forEach((item) => item.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
 const root = document.documentElement;
 const toggle = document.getElementById('theme-toggle');
 

@@ -183,6 +183,12 @@ a:hover {
   text-decoration: none;
 }
 
+/* Активний пункт меню (клас додається через JavaScript) */
+.nav-list a.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
 .hero {
   padding-block: 2.5rem 3rem;
 }
