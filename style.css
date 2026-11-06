@@ -736,3 +736,31 @@ img {
   color: var(--primary-color);
   border-color: var(--primary-color);
 }
+
+/* ---------- Повідомлення форми (помилка / успіх) ---------- */
+:root {
+  --error-color: #d92d20;
+  --success-color: #039855;
+}
+
+.form-message {
+  display: none;
+  padding: 0.75rem 1rem;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--muted-color);
+  border-radius: 0.5rem;
+}
+
+.form-message.is-error,
+.form-message.is-success {
+  display: block;
+}
+
+.form-message.is-error {
+  border-left-color: var(--error-color);
+}
+
+.form-message.is-success {
+  border-left-color: var(--success-color);
+}
