@@ -17,6 +17,11 @@ const pageFooter = document.querySelector('footer');
 console.log('Заголовок h1:', mainTitle.textContent);
 console.log('Футер знайдено:', pageFooter !== null);
 
+
+// Крок 5: змінюємо текстовий вміст: поточний рік у футері
+const yearElement = document.querySelector('#current-year');
+yearElement.textContent = new Date().getFullYear();
+
 const root = document.documentElement;
 const toggle = document.getElementById('theme-toggle');
 
