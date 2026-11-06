@@ -74,3 +74,12 @@ navPanel.querySelectorAll('.nav-list a').forEach((link) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeMenu();
 });
+
+
+// ===== Практична 15: обробка подій і валідація форми =====
+const contactForm = document.querySelector('.contact-form');
+
+contactForm.addEventListener('submit', (event) => {
+  event.preventDefault(); // сторінка не перезавантажується
+  console.log('Форму відправлено, сторінка не перезавантажилась');
+});
