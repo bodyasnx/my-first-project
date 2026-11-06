@@ -10,6 +10,13 @@ console.log('Проєкт:', projectName);
 console.log('Розділи сайту:', sectionNames);
 console.log('Кількість розділів:', sectionsCount);
 
+
+// Крок 4: вибираємо елементи DOM через querySelector
+const mainTitle = document.querySelector('h1');
+const pageFooter = document.querySelector('footer');
+console.log('Заголовок h1:', mainTitle.textContent);
+console.log('Футер знайдено:', pageFooter !== null);
+
 const root = document.documentElement;
 const toggle = document.getElementById('theme-toggle');
 
