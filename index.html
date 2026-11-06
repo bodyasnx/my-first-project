@@ -18,19 +18,30 @@
   <!-- Header: логотип і навігація -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#home" aria-label="VXE R1 — на початок сторінки">VXE <span>R1</span></a>
+      <div class="header-row">
+        <a class="logo" href="#home" aria-label="VXE R1 — на початок сторінки">VXE <span>R1</span></a>
 
-      <nav aria-label="Основна навігація">
-        <ul class="nav-list">
-          <li><a href="#home">Головна</a></li>
-          <li><a href="#features">Переваги</a></li>
-          <li><a href="#specs">Характеристики</a></li>
-          <li><a href="#gallery">Галерея</a></li>
-          <li><a href="#contacts">Контакти</a></li>
-        </ul>
-      </nav>
+        <!-- Бургер-меню: видиме лише на мобільних, керує блоком .nav-panel -->
+        <button id="nav-toggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Відкрити меню">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
 
-      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Перемкнути світлу або темну тему">Змінити тему</button>
+      <div class="nav-panel" id="primary-nav">
+        <nav aria-label="Основна навігація">
+          <ul class="nav-list">
+            <li><a href="#home">Головна</a></li>
+            <li><a href="#features">Переваги</a></li>
+            <li><a href="#specs">Характеристики</a></li>
+            <li><a href="#gallery">Галерея</a></li>
+            <li><a href="#contacts">Контакти</a></li>
+          </ul>
+        </nav>
+
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Перемкнути світлу або темну тему">Змінити тему</button>
+      </div>
     </div>
   </header>
 
