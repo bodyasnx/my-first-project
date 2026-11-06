@@ -68,7 +68,7 @@
     outline: 3px solid var(--primary-color);
     outline-offset: 3px;
   }
-  .container {
+  .site-container {
     width: min(100% - 2rem, 72rem);
     margin-inline: auto;
   }
