@@ -90,4 +90,21 @@ contactForm.addEventListener('submit', (event) => {
   console.log('Email:', email);
   console.log('Повідомлення:', message);
   console.log('Згода:', consent);
+  
+  let error = '';
+  if (name === '') {
+    error = "Введіть ім'я.";
+  } else if (email === '' || !email.includes('@')) {
+    error = 'Введіть коректний email: він має містити «@».';
+  } else if (message === '') {
+    error = 'Напишіть повідомлення.';
+  } else if (!consent) {
+    error = 'Потрібна згода на обробку даних.';
+  }
+
+  if (error !== '') {
+    console.log('Помилка:', error);
+    return;
+  }
+  console.log('Форма заповнена коректно');
 });
