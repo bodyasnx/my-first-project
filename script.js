@@ -81,5 +81,13 @@ const contactForm = document.querySelector('.contact-form');
 
 contactForm.addEventListener('submit', (event) => {
   event.preventDefault(); // сторінка не перезавантажується
-  console.log('Форму відправлено, сторінка не перезавантажилась');
+
+  const name = document.querySelector('#name').value.trim();
+  const email = document.querySelector('#email').value.trim();
+  const message = document.querySelector('#message').value.trim();
+  const consent = document.querySelector('#consent').checked;
+  console.log("Ім'я:", name);
+  console.log('Email:', email);
+  console.log('Повідомлення:', message);
+  console.log('Згода:', consent);
 });
