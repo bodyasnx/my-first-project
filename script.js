@@ -121,3 +121,13 @@ contactForm.addEventListener('submit', (event) => {
   showMessage('Дякуємо, ' + name + '! Повідомлення прийнято (навчальна форма нікуди не надсилає дані).', 'success');
   contactForm.reset();
 });
+
+const emailInput = document.querySelector('#email');
+emailInput.addEventListener('input', () => {
+  const value = emailInput.value.trim();
+  if (value !== '' && !value.includes('@')) {
+    showMessage('Email має містити «@».', 'error');
+  } else {
+    clearMessage();
+  }
+});
