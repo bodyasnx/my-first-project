@@ -132,7 +132,7 @@ const data = { name, email, phone, message };
 
   try {
     // Крок 6: надсилаємо POST-запит із JSON
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    const response = await fetch(`${API_URL}/api/contact`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -145,7 +145,7 @@ const data = { name, email, phone, message };
     const result = await response.json();
     console.log('Відповідь сервера:', result);
 
-    showMessage('Дякуємо, ' + name + '! Повідомлення надіслано (id: ' + result.id + ').', 'success');
+    showMessage('Дякуємо, ' + name + '! Повідомлення надіслано на сервер.', 'success');
     contactForm.reset();
   } catch (error) {
     console.error('Помилка відправки:', error);
