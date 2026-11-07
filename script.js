@@ -95,6 +95,7 @@ contactForm.addEventListener('submit', async (event) => {
 
   const name = document.querySelector('#name').value.trim();
   const email = document.querySelector('#email').value.trim();
+  const phone = document.querySelector('#phone').value.trim();
   const message = document.querySelector('#message').value.trim();
   const consent = document.querySelector('#consent').checked;
 
@@ -103,6 +104,8 @@ contactForm.addEventListener('submit', async (event) => {
     error = "Введіть ім'я.";
   } else if (email === '' || !email.includes('@')) {
     error = 'Введіть коректний email: він має містити «@».';
+      } else if (phone !== '' && !/^\+380\d{9}$/.test(phone)) {
+    error = 'Введіть телефон у форматі +380XXXXXXXXX.';
   } else if (message === '') {
     error = 'Напишіть повідомлення.';
   } else if (!consent) {
