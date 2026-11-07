@@ -1,4 +1,6 @@
 import Card from './components/Card.jsx'
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
 
 const variants = [
   {
@@ -26,15 +28,18 @@ const variants = [
     image: '/images/gallery-underside.webp',
   },
 ]
-
 function App() {
   return (
-    <main>
-      <h1>VXE R1 Pro Max</h1>
-      {variants.map((item) => (
-        <Card key={item.id} {...item} />
-      ))}
-    </main>
+    <>
+      <Header />
+      <main id="variants">
+        <h1>VXE R1 Pro Max</h1>
+        {variants.map((item) => (
+          <Card key={item.id} {...item} />
+        ))}
+      </main>
+      <Footer />
+    </>
   )
 }
 
