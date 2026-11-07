@@ -135,9 +135,15 @@ emailInput.addEventListener('input', () => {
 // ===== Практична 18: Fetch / AJAX =====
 const reviewsList = document.querySelector('#reviews-list');
 
-fetch('https://jsonplaceholder.typicode.com/posts?_limit=3')
-  .then((response) => response.json())
-  .then((posts) => {
+
+async function loadReviews() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=3');
+    if (!response.ok) {
+      throw new Error('Помилка сервера: ' + response.status);
+    }
+    const posts = await response.json();
+
     reviewsList.innerHTML = '';
     posts.forEach((post) => {
       const card = document.createElement('article');
@@ -150,4 +156,14 @@ fetch('https://jsonplaceholder.typicode.com/posts?_limit=3')
       card.append(title);
       reviewsList.append(card);
     });
-  });
+  } catch (error) {
+    console.error('Не вдалося завантажити відгуки:', error);
+    reviewsList.innerHTML = '';
+    const message = document.createElement('p');
+    message.className = 'text-muted';
+    message.textContent = 'Не вдалося завантажити відгуки. Спробуйте пізніше.';
+    reviewsList.append(message);
+  }
+}
+
+loadReviews();
