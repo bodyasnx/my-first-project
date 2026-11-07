@@ -84,3 +84,12 @@
   color: var(--text-color);
   transition: background-color 0.25s, color 0.25s;
 }
+
+/* Шапка: навігація та кнопка теми в один рядок на широких екранах */
+@media (min-width: 768px) {
+  .site-header .nav-panel.is-open {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.75rem;
+  }
+}
