@@ -14,7 +14,13 @@ function Card({ title, text, image }) {
       </div>
       <h3>{title}</h3>
       <p>{text}</p>
-      <p>Вподобань: {likes}</p>
+      <button
+        type="button"
+        className="like-button"
+        onClick={() => setLikes(likes + 1)}
+      >
+        ♥ Подобається: {likes}
+      </button>
     </article>
   )
 }

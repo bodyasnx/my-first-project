@@ -50,3 +50,22 @@
   font-size: 0.95rem;
   color: var(--muted-color);
 }
+
+/* Кнопка лічильника */
+.like-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--text-color);
+  background: transparent;
+  border: 1px solid var(--muted-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.like-button:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
