@@ -134,3 +134,23 @@
   max-width: 24rem;
   margin: 1.5rem auto 0;
 }
+
+/* Поле привітання */
+.greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 24rem;
+  margin: 1.5rem auto 0;
+}
+
+.greeting-text {
+  color: var(--muted-color);
+}
+
+/* Секція «Про проєкт»: текст по центру разом із заголовком і полем */
+#about .note {
+  max-width: 36rem;
+  margin-inline: auto;
+  text-align: center;
+}
