@@ -1,14 +1,15 @@
-function Card() {
+function Card({ title, text, image }) {
   return (
     <article className="variant-card">
       <div className="variant-card-image">
         <img
-          src="/images/gallery-white-top.webp"
-          alt="Біла миша VXE R1 Pro Max, вигляд зверху"
+          src={image}
+          alt={`${title}: фото миші VXE R1 Pro Max`}
+          loading="lazy"
         />
       </div>
-      <h3>Біла версія</h3>
-      <p>Класичний білий колір, вигляд зверху.</p>
+      <h3>{title}</h3>
+      <p>{text}</p>
     </article>
   )
 }
