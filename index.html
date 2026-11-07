@@ -187,7 +187,20 @@
         </div>
         </div>
     </section>
+    <!-- ===== Відгуки: дані з API через fetch ===== -->
+    <section id="reviews" class="section" aria-labelledby="reviews-title">
+      <div class="site-container">
+        <div class="section-head">
+          <span class="watermark" aria-hidden="true">Відгуки</span>
+          <h2 id="reviews-title">Що пишуть користувачі</h2>
+          <p>Дані підвантажуються з тестового API (jsonplaceholder.typicode.com).</p>
+        </div>
 
+        <div id="reviews-list" class="grid grid-cols-1 gap-5 md:grid-cols-3" aria-live="polite">
+          <p class="text-muted">Завантаження…</p>
+        </div>
+      </div>
+    </section>
     <!-- ===== Контакти (форму додамо на занятті 4) ===== -->
     <section id="contacts" class="section" aria-labelledby="contacts-title">
       <div class="site-container">

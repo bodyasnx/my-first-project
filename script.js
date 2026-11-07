@@ -131,3 +131,23 @@ emailInput.addEventListener('input', () => {
     clearMessage();
   }
 });
+
+// ===== Практична 18: Fetch / AJAX =====
+const reviewsList = document.querySelector('#reviews-list');
+
+fetch('https://jsonplaceholder.typicode.com/posts?_limit=3')
+  .then((response) => response.json())
+  .then((posts) => {
+    reviewsList.innerHTML = '';
+    posts.forEach((post) => {
+      const card = document.createElement('article');
+      card.className = 'rounded-xl border border-line bg-surface p-6 shadow-md';
+
+      const title = document.createElement('h3');
+      title.className = 'text-lg font-semibold leading-snug';
+      title.textContent = post.title;
+
+      card.append(title);
+      reviewsList.append(card);
+    });
+  });
