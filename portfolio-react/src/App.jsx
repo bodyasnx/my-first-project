@@ -1,6 +1,7 @@
 import Card from './components/Card.jsx'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
+import Section from './components/Section.jsx'
 
 const variants = [
   {
@@ -33,19 +34,24 @@ function App() {
     <>
       <Header />
       <main>
-        <section id="variants" className="section" aria-labelledby="variants-title">
-          <div className="site-container">
-            <div className="section-head">
-              <h1 id="variants-title">VXE R1 Pro Max</h1>
-              <p>Кольорові версії ультралегкої бездротової миші.</p>
-            </div>
-            <div className="variants-grid">
-              {variants.map((item) => (
-                <Card key={item.id} {...item} />
-              ))}
-            </div>
+        <h1 className="visually-hidden">VXE R1 Pro Max</h1>
+        <Section
+          id="variants"
+          title="Кольорові версії"
+          subtitle="Ультралегка бездротова миша VXE R1 Pro Max."
+        >
+          <div className="variants-grid">
+            {variants.map((item) => (
+              <Card key={item.id} {...item} />
+            ))}
           </div>
-        </section>
+        </Section>
+        <Section id="about" title="Про проєкт">
+          <p className="note">
+            Картки виводяться з масиву через map, а шапка, підвал і секції це окремі
+            React-компоненти.
+          </p>
+        </Section>
       </main>
       <Footer />
     </>
