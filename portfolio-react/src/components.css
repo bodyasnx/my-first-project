@@ -19,6 +19,8 @@
 
 /* Картка */
 .variant-card {
+      display: flex;
+  flex-direction: column;
   padding: 1.25rem;
   background-color: var(--surface-color);
   border: 1px solid var(--border-color);
@@ -53,7 +55,8 @@
 
 /* Кнопка лічильника */
 .like-button {
-  margin-top: 1rem;
+  margin-top: auto;
+  align-self: flex-start;
   padding: 0.5rem 1rem;
   font: inherit;
   font-weight: 600;
@@ -68,4 +71,8 @@
 .like-button:hover {
   color: var(--primary-color);
   border-color: var(--primary-color);
+}
+
+.variant-card p:last-of-type {
+  margin-bottom: 1rem;
 }
