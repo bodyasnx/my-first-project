@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Header from './components/Header.jsx'
 import Card from './components/Card.jsx'
 import Footer from './components/Footer.jsx'
@@ -8,8 +8,13 @@ import Filter from './components/Filter.jsx'
 import Greeting from './components/Greeting.jsx'
 
 function App() {
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem('react-theme') || 'dark'
+  )
     const [category, setCategory] = useState('all')
+      useEffect(() => {
+    localStorage.setItem('react-theme', theme)
+  }, [theme])
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
