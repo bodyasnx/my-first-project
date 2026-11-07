@@ -76,3 +76,11 @@
 .variant-card p:last-of-type {
   margin-bottom: 1rem;
 }
+
+/* Обгортка застосунку: тема задається атрибутом data-theme */
+.app {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.25s, color 0.25s;
+}

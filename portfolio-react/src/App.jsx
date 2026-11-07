@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Header from './components/Header.jsx'
 import Card from './components/Card.jsx'
 import Footer from './components/Footer.jsx'
@@ -5,9 +6,15 @@ import Section from './components/Section.jsx'
 import { variants } from './data.js'
 
 function App() {
+  const [theme, setTheme] = useState('dark')
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
+
   return (
-    <>
-      <Header />
+    <div className="app" data-theme={theme}>
+      <Header theme={theme} onToggleTheme={toggleTheme} />
       <main>
         <h1 className="visually-hidden">VXE R1 Pro Max</h1>
         <Section
@@ -29,7 +36,7 @@ function App() {
         </Section>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 

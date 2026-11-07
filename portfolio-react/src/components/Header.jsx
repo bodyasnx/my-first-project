@@ -1,4 +1,4 @@
-function Header() {
+function Header({ theme, onToggleTheme }) {
   return (
     <header className="site-header">
       <div className="site-container header-inner">
@@ -12,6 +12,9 @@ function Header() {
             <li><a href="#variants">Версії</a></li>
             <li><a href="#footer">Контакти</a></li>
           </ul>
+          <button type="button" className="theme-toggle" onClick={onToggleTheme}>
+            {theme === 'dark' ? 'Світла тема' : 'Темна тема'}
+          </button>
         </nav>
       </div>
     </header>
