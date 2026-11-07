@@ -32,11 +32,20 @@ function App() {
   return (
     <>
       <Header />
-      <main id="variants">
-        <h1>VXE R1 Pro Max</h1>
-        {variants.map((item) => (
-          <Card key={item.id} {...item} />
-        ))}
+      <main>
+        <section id="variants" className="section" aria-labelledby="variants-title">
+          <div className="site-container">
+            <div className="section-head">
+              <h1 id="variants-title">VXE R1 Pro Max</h1>
+              <p>Кольорові версії ультралегкої бездротової миші.</p>
+            </div>
+            <div className="variants-grid">
+              {variants.map((item) => (
+                <Card key={item.id} {...item} />
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
