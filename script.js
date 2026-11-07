@@ -89,6 +89,21 @@ function clearMessage() {
   formMessage.textContent = '';
   formMessage.className = 'form-message';
 }
+function validateForm({ name, email, phone, message, consent }) {
+  if (name === '') {
+    return "Введіть ім'я.";
+  } else if (email === '' || !email.includes('@')) {
+    return 'Введіть коректний email: він має містити «@».';
+  } else if (phone !== '' && !/^\+380\d{9}$/.test(phone)) {
+    return 'Введіть телефон у форматі +380XXXXXXXXX.';
+  } else if (message === '') {
+    return 'Напишіть повідомлення.';
+  } else if (!consent) {
+    return 'Потрібна згода на обробку даних.';
+  }
+
+  return '';
+}
 
 contactForm.addEventListener('submit', async (event) => {
   event.preventDefault(); // сторінка не перезавантажується
@@ -99,18 +114,7 @@ contactForm.addEventListener('submit', async (event) => {
   const message = document.querySelector('#message').value.trim();
   const consent = document.querySelector('#consent').checked;
 
-  let error = '';
-  if (name === '') {
-    error = "Введіть ім'я.";
-  } else if (email === '' || !email.includes('@')) {
-    error = 'Введіть коректний email: він має містити «@».';
-      } else if (phone !== '' && !/^\+380\d{9}$/.test(phone)) {
-    error = 'Введіть телефон у форматі +380XXXXXXXXX.';
-  } else if (message === '') {
-    error = 'Напишіть повідомлення.';
-  } else if (!consent) {
-    error = 'Потрібна згода на обробку даних.';
-  }
+  const error = validateForm({ name, email, phone, message, consent });
 
   if (error !== '') {
     showMessage(error, 'error');
