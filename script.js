@@ -118,7 +118,7 @@ contactForm.addEventListener('submit', async (event) => {
   }
 
   // Крок 5: збираємо дані форми в об'єкт
-  const data = { name, email, message };
+const data = { name, email, phone, message };
 
   // Крок 8: стан завантаження — блокуємо кнопку на час запиту
   const submitButton = contactForm.querySelector('button[type="submit"]');
