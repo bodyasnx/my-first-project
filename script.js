@@ -117,6 +117,12 @@ contactForm.addEventListener('submit', async (event) => {
   // Крок 5: збираємо дані форми в об'єкт
   const data = { name, email, message };
 
+  // Крок 8: стан завантаження — блокуємо кнопку на час запиту
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const buttonText = submitButton.textContent;
+  submitButton.disabled = true;
+  submitButton.textContent = 'Надсилання…';
+
   try {
     // Крок 6: надсилаємо POST-запит із JSON
     const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -137,6 +143,10 @@ contactForm.addEventListener('submit', async (event) => {
   } catch (error) {
     console.error('Помилка відправки:', error);
     showMessage("Не вдалося надіслати повідомлення. Перевірте з'єднання й спробуйте ще раз.", 'error');
+  } finally {
+    // виконується завжди: і після успіху, і після помилки
+    submitButton.disabled = false;
+    submitButton.textContent = buttonText;
   }
 });
 
