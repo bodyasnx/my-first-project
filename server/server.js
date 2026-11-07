@@ -1,7 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 const PORT = 3000;
+
+// Дозволяє фронтенду з іншої адреси (порту) звертатися до цього API
+app.use(cors());
 
 // Дозволяє читати JSON у тілі запиту (req.body)
 app.use(express.json());
