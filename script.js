@@ -90,17 +90,13 @@ function clearMessage() {
   formMessage.className = 'form-message';
 }
 
-contactForm.addEventListener('submit', (event) => {
+contactForm.addEventListener('submit', async (event) => {
   event.preventDefault(); // сторінка не перезавантажується
 
   const name = document.querySelector('#name').value.trim();
   const email = document.querySelector('#email').value.trim();
   const message = document.querySelector('#message').value.trim();
   const consent = document.querySelector('#consent').checked;
-  console.log("Ім'я:", name);
-  console.log('Email:', email);
-  console.log('Повідомлення:', message);
-  console.log('Згода:', consent);
 
   let error = '';
   if (name === '') {
@@ -118,8 +114,30 @@ contactForm.addEventListener('submit', (event) => {
     return;
   }
 
-  showMessage('Дякуємо, ' + name + '! Повідомлення прийнято (навчальна форма нікуди не надсилає дані).', 'success');
-  contactForm.reset();
+  // Крок 5: збираємо дані форми в об'єкт
+  const data = { name, email, message };
+
+  try {
+    // Крок 6: надсилаємо POST-запит із JSON
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    // Крок 7: перевіряємо статус відповіді
+    if (!response.ok) {
+      throw new Error('Помилка сервера: ' + response.status);
+    }
+    const result = await response.json();
+    console.log('Відповідь сервера:', result);
+
+    showMessage('Дякуємо, ' + name + '! Повідомлення надіслано (id: ' + result.id + ').', 'success');
+    contactForm.reset();
+  } catch (error) {
+    console.error('Помилка відправки:', error);
+    showMessage("Не вдалося надіслати повідомлення. Перевірте з'єднання й спробуйте ще раз.", 'error');
+  }
 });
 
 const emailInput = document.querySelector('#email');
