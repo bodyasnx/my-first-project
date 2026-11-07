@@ -5,6 +5,7 @@ import Footer from './components/Footer.jsx'
 import Section from './components/Section.jsx'
 import { variants } from './data.js'
 import Filter from './components/Filter.jsx'
+import Greeting from './components/Greeting.jsx'
 
 function App() {
   const [theme, setTheme] = useState('dark')
@@ -40,6 +41,7 @@ function App() {
             Картки виводяться з масиву через map, а шапка, підвал і секції це окремі
             React-компоненти.
           </p>
+          <Greeting />
         </Section>
       </main>
       <Footer />
