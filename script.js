@@ -202,3 +202,47 @@ async function loadReviews() {
 }
 
 loadReviews();
+
+// ===== Практична 22: дані з власного API (Node.js) =====
+const API_URL = 'http://localhost:3000';
+const projectsList = document.querySelector('#projects-list');
+
+async function loadProjects() {
+  try {
+    const response = await fetch(`${API_URL}/api/projects`);
+    if (!response.ok) {
+      throw new Error('Помилка сервера: ' + response.status);
+    }
+    const projects = await response.json();
+
+    projectsList.innerHTML = '';
+    projects.forEach((project) => {
+      const card = document.createElement('article');
+      card.className = 'rounded-xl border border-line bg-surface p-6 shadow-md';
+
+      const title = document.createElement('h3');
+      title.className = 'text-lg font-semibold leading-snug';
+      title.textContent = project.title;
+
+      const text = document.createElement('p');
+      text.className = 'mt-2 text-[0.95rem] text-muted';
+      text.textContent = project.description;
+
+      const tech = document.createElement('p');
+      tech.className = 'mt-3 text-sm font-semibold text-brand';
+      tech.textContent = project.tech.join(' · ');
+
+      card.append(title, text, tech);
+      projectsList.append(card);
+    });
+  } catch (error) {
+    console.error('Не вдалося завантажити проєкти:', error);
+    projectsList.innerHTML = '';
+    const message = document.createElement('p');
+    message.className = 'text-muted';
+    message.textContent = 'Не вдалося завантажити проєкти. Переконайтеся, що сервер запущено (node server.js).';
+    projectsList.append(message);
+  }
+}
+
+loadProjects();
