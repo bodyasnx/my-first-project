@@ -4,13 +4,19 @@ import Card from './components/Card.jsx'
 import Footer from './components/Footer.jsx'
 import Section from './components/Section.jsx'
 import { variants } from './data.js'
+import Filter from './components/Filter.jsx'
 
 function App() {
   const [theme, setTheme] = useState('dark')
+    const [category, setCategory] = useState('all')
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
   }
+    const visibleVariants =
+    category === 'all'
+      ? variants
+      : variants.filter((item) => item.category === category)
 
   return (
     <div className="app" data-theme={theme}>
@@ -22,8 +28,9 @@ function App() {
           title="Кольорові версії"
           subtitle="Ультралегка бездротова миша VXE R1 Pro Max."
         >
+          <Filter active={category} onChange={setCategory} />
           <div className="variants-grid">
-            {variants.map((item) => (
+            {visibleVariants.map((item) => (
               <Card key={item.id} {...item} />
             ))}
           </div>
