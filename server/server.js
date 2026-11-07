@@ -3,6 +3,9 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
+// Дозволяє читати JSON у тілі запиту (req.body)
+app.use(express.json());
+
 // Дані проєктів (мої роботи з курсу)
 const projects = [
   {
@@ -34,6 +37,12 @@ const projects = [
 // GET /api/projects — віддаємо список проєктів у форматі JSON
 app.get('/api/projects', (req, res) => {
   res.json(projects);
+});
+
+// POST /api/contact — приймаємо повідомлення з форми
+app.post('/api/contact', (req, res) => {
+  console.log('Нове повідомлення з форми:', req.body);
+  res.json({ ok: true });
 });
 
 app.listen(PORT, () => {
