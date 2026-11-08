@@ -384,6 +384,11 @@ textarea:hover {
   user-select: none;
 }
 
+   /* Текст напису-фону береться з data-text: декоративний текст не входить у вміст сторінки */
+   .watermark::before {
+     content: attr(data-text);
+   }
+
 .section-head h2,
 .section-head p {
   position: relative;
