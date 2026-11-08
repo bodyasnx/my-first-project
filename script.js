@@ -173,7 +173,7 @@ async function loadReviews() {
     console.error('Не вдалося завантажити відгуки:', error);
     reviewsList.innerHTML = '';
     const message = document.createElement('p');
-    message.className = 'text-muted';
+    message.className = 'text-muted col-span-full text-center';
     message.textContent = 'Не вдалося завантажити відгуки. Спробуйте пізніше.';
     reviewsList.append(message);
   }
@@ -217,7 +217,7 @@ async function loadProjects() {
     console.error('Не вдалося завантажити проєкти:', error);
     projectsList.innerHTML = '';
     const message = document.createElement('p');
-    message.className = 'text-muted';
+    message.className = 'text-muted col-span-full text-center';
     message.textContent = 'Не вдалося завантажити проєкти. Переконайтеся, що сервер запущено (node server.js).';
     projectsList.append(message);
   }
