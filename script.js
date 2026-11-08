@@ -15,6 +15,22 @@ navLinks.forEach((link) => {
   });
 });
 
+   // Підсвічування пункту меню за секцією, яка зараз посередині екрана
+   const sections = [...navLinks]
+     .map((link) => document.querySelector(link.getAttribute('href')))
+     .filter(Boolean);
+
+   const sectionObserver = new IntersectionObserver((entries) => {
+     entries.forEach((entry) => {
+       if (!entry.isIntersecting) return;
+       navLinks.forEach((item) => {
+         item.classList.toggle('active', item.getAttribute('href') === '#' + entry.target.id);
+       });
+     });
+   }, { rootMargin: '-45% 0px -50% 0px' });
+
+   sections.forEach((section) => sectionObserver.observe(section));
+
 const root = document.documentElement;
 const toggle = document.getElementById('theme-toggle');
 
