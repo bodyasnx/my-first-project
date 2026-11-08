@@ -90,6 +90,7 @@ contactForm.addEventListener('submit', async (event) => {
   const email = document.querySelector('#email').value.trim();
   const phone = document.querySelector('#phone').value.trim();
   const message = document.querySelector('#message').value.trim();
+  const topic = document.querySelector('#topic').value;
   const consent = document.querySelector('#consent').checked;
 
   const error = validateForm({ name, email, phone, message, consent });
@@ -100,7 +101,7 @@ contactForm.addEventListener('submit', async (event) => {
   }
 
   // Крок 5: збираємо дані форми в об'єкт
-const data = { name, email, phone, message };
+const data = { name, email, phone, topic, message };
 
   // Крок 8: стан завантаження — блокуємо кнопку на час запиту
   const submitButton = contactForm.querySelector('button[type="submit"]');
