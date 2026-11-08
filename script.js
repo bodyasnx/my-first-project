@@ -240,3 +240,11 @@ async function loadProjects() {
 }
 
 loadProjects();
+
+// ===== Практична 26: реєстрація service worker (PWA) =====
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .catch((error) => console.error('Не вдалося зареєструвати service worker:', error));
+  });
+}
